@@ -23,7 +23,7 @@ Once Theme is installed you need to register the service provider with the appli
 ~~~
 'providers' => array(
 
-    'Teepluss\Restable\RestableServiceProvider'
+    Teepluss\Restable\RestableServiceProvider::class
 
 )
 ~~~
@@ -33,7 +33,7 @@ Restable also ships with a facade which provides the static syntax for creating 
 ~~~
 'aliases' => array(
 
-    'Restable' => 'Teepluss\Restable\Facades\Restable'
+    'Restable' => Teepluss\Restable\Facades\Restable::class
 
 )
 ~~~
