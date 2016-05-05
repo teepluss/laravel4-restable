@@ -115,7 +115,7 @@ class ApiBlogsController extends BaseController {
 
         if ($validator->fails())
         {
-            return $this->rest->unprocess($validator)->render();
+            return $this->rest->unprocess($validator->errors())->render();
         }
 
         $blog->title = Input::get('title');
@@ -184,7 +184,7 @@ class ApiBlogsController extends BaseController {
 
         if ($validator->fails())
         {
-            return $this->rest->unprocess($validator)->render();
+            return $this->rest->unprocess($validator->errors())->render();
         }
 
         $blog->title = Input::get('title');
