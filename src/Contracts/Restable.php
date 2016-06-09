@@ -103,7 +103,7 @@ interface Restable {
      *
      * @param  string         $format
      * @param  null|callable  $callback
-     * @return mixed
+     * @return mixed|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     public function render($format = null, $callback = null);
 

@@ -312,7 +312,7 @@ class Restable implements RestableContract {
      *
      * @param  string         $format
      * @param  null|callable  $callback
-     * @return \Teepluss\Restable\Restable
+     * @return mixed|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     public function render($format = null, $callback = null)
     {
