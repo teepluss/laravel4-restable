@@ -13,40 +13,39 @@ interface Restable {
     /**
      * Response listing.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  mixed  $messages
+     * @return \Teepluss\Restable\Restable
      */
     public function listing($messages);
 
     /**
      * Response single.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  mixed  $messages
+     * @return \Teepluss\Restable\Restable
      */
     public function single($messages);
 
     /**
      * Response created.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  mixed  $messages
+     * @return \Teepluss\Restable\Restable
      */
     public function created($messages);
 
     /**
      * Response updated.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  mixed  $messages
+     * @return \Teepluss\Restable\Restable
      */
     public function updated($messages);
 
     /**
      * Response deleted.
      *
-     * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function deleted();
 
@@ -61,8 +60,9 @@ interface Restable {
     /**
      * Response error.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  mixed $messages
+     * @param  int   $type
+     * @return \Teepluss\Restable\Restable
      */
     public function error($messages, $type = 400);
 
@@ -70,7 +70,7 @@ interface Restable {
      * Unauthorized.
      *
      * @param  mixed $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function unauthorized($description = null);
 
@@ -78,31 +78,32 @@ interface Restable {
      * Any error return 400 as bad request.
      *
      * @param  mixed  $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function bad($description = null);
 
     /**
      * Alias of error 404 response.
      *
-     * @param  array  $messages
-     * @return string
+     * @param  string  $description
+     * @return \Teepluss\Restable\Restable
      */
     public function missing($description = null);
 
     /**
      * Alias of error 422 response.
      *
-     * @param  array  $error
-     * @return string
+     * @param  mixed  $errors
+     * @return \Teepluss\Restable\Restable
      */
     public function unprocess($errors);
 
     /**
      * Render response with format.
      *
-     * @param  string $format
-     * @return mixed
+     * @param  string         $format
+     * @param  null|callable  $callback
+     * @return mixed|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     public function render($format = null, $callback = null);
 
