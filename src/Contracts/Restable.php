@@ -13,7 +13,7 @@ interface Restable {
     /**
      * Response listing.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function listing($messages);
@@ -21,7 +21,7 @@ interface Restable {
     /**
      * Response single.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function single($messages);
@@ -29,7 +29,7 @@ interface Restable {
     /**
      * Response created.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function created($messages);
@@ -37,7 +37,7 @@ interface Restable {
     /**
      * Response updated.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function updated($messages);
@@ -60,7 +60,7 @@ interface Restable {
     /**
      * Response error.
      *
-     * @param  array  $messages
+     * @param  mixed $messages
      * @param  int   $type
      * @return \Teepluss\Restable\Restable
      */
@@ -85,7 +85,7 @@ interface Restable {
     /**
      * Alias of error 404 response.
      *
-     * @param  array  $messages
+     * @param  string  $description
      * @return \Teepluss\Restable\Restable
      */
     public function missing($description = null);
@@ -93,7 +93,7 @@ interface Restable {
     /**
      * Alias of error 422 response.
      *
-     * @param  array  $error
+     * @param  mixed  $errors
      * @return \Teepluss\Restable\Restable
      */
     public function unprocess($errors);

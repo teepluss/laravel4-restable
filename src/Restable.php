@@ -90,7 +90,7 @@ class Restable implements RestableContract {
     /**
      * Making response.
      *
-     * @param  array  $data
+     * @param  mixed  $data
      * @param  string $type
      * @return \Teepluss\Restable\Restable
      */
@@ -141,7 +141,7 @@ class Restable implements RestableContract {
     /**
      * Response listing.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function listing($messages)
@@ -154,7 +154,7 @@ class Restable implements RestableContract {
     /**
      * Response single.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function single($messages)
@@ -167,7 +167,7 @@ class Restable implements RestableContract {
     /**
      * Response created.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function created($messages)
@@ -180,7 +180,7 @@ class Restable implements RestableContract {
     /**
      * Response updated.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return \Teepluss\Restable\Restable
      */
     public function updated($messages)
@@ -216,7 +216,7 @@ class Restable implements RestableContract {
     /**
      * Response error.
      *
-     * @param  array  $messages
+     * @param  mixed $messages
      * @param  int   $type
      * @return \Teepluss\Restable\Restable
      */
@@ -252,7 +252,7 @@ class Restable implements RestableContract {
     /**
      * Alias of error 404 response.
      *
-     * @param  array  $messages
+     * @param  mixed $description
      * @return \Teepluss\Restable\Restable
      */
     public function missing($description = null)
@@ -263,7 +263,7 @@ class Restable implements RestableContract {
     /**
      * Alias of error 422 response.
      *
-     * @param  array  $error
+     * @param  mixed  $errors
      * @return \Teepluss\Restable\Restable
      */
     public function unprocess($errors)
@@ -274,7 +274,7 @@ class Restable implements RestableContract {
     /**
      * Validation error.
      *
-     * @param  array  $messages
+     * @param  mixed  $messages
      * @return string
      */
     protected function error_422($messages)
