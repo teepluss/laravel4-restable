@@ -142,7 +142,7 @@ class Restable implements RestableContract {
      * Response listing.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function listing($messages)
     {
@@ -155,7 +155,7 @@ class Restable implements RestableContract {
      * Response single.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function single($messages)
     {
@@ -168,7 +168,7 @@ class Restable implements RestableContract {
      * Response created.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function created($messages)
     {
@@ -181,7 +181,7 @@ class Restable implements RestableContract {
      * Response updated.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function updated($messages)
     {
@@ -193,8 +193,7 @@ class Restable implements RestableContract {
     /**
      * Response deleted.
      *
-     * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function deleted()
     {
@@ -205,7 +204,7 @@ class Restable implements RestableContract {
      * Simple response success.
      *
      * @param  mixed  $message
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function success($message)
     {
@@ -218,7 +217,8 @@ class Restable implements RestableContract {
      * Response error.
      *
      * @param  array  $messages
-     * @return string
+     * @param  int   $type
+     * @return \Teepluss\Restable\Restable
      */
     public function error($messages, $type = 400)
     {
@@ -231,7 +231,7 @@ class Restable implements RestableContract {
      * Unauthorized.
      *
      * @param  mixed $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function unauthorized($description = null)
     {
@@ -242,7 +242,7 @@ class Restable implements RestableContract {
      * Any error return 400 as bad request.
      *
      * @param  mixed  $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function bad($description = null)
     {
@@ -253,7 +253,7 @@ class Restable implements RestableContract {
      * Alias of error 404 response.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function missing($description = null)
     {
@@ -264,7 +264,7 @@ class Restable implements RestableContract {
      * Alias of error 422 response.
      *
      * @param  array  $error
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function unprocess($errors)
     {
@@ -310,8 +310,9 @@ class Restable implements RestableContract {
     /**
      * Render response with format.
      *
-     * @param  string $format
-     * @return mixed
+     * @param  string         $format
+     * @param  null|callable  $callback
+     * @return \Teepluss\Restable\Restable
      */
     public function render($format = null, $callback = null)
     {

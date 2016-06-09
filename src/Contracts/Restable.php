@@ -14,7 +14,7 @@ interface Restable {
      * Response listing.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function listing($messages);
 
@@ -22,7 +22,7 @@ interface Restable {
      * Response single.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function single($messages);
 
@@ -30,7 +30,7 @@ interface Restable {
      * Response created.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function created($messages);
 
@@ -38,15 +38,14 @@ interface Restable {
      * Response updated.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function updated($messages);
 
     /**
      * Response deleted.
      *
-     * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function deleted();
 
@@ -62,7 +61,8 @@ interface Restable {
      * Response error.
      *
      * @param  array  $messages
-     * @return string
+     * @param  int   $type
+     * @return \Teepluss\Restable\Restable
      */
     public function error($messages, $type = 400);
 
@@ -70,7 +70,7 @@ interface Restable {
      * Unauthorized.
      *
      * @param  mixed $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function unauthorized($description = null);
 
@@ -78,7 +78,7 @@ interface Restable {
      * Any error return 400 as bad request.
      *
      * @param  mixed  $description
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function bad($description = null);
 
@@ -86,7 +86,7 @@ interface Restable {
      * Alias of error 404 response.
      *
      * @param  array  $messages
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function missing($description = null);
 
@@ -94,14 +94,15 @@ interface Restable {
      * Alias of error 422 response.
      *
      * @param  array  $error
-     * @return string
+     * @return \Teepluss\Restable\Restable
      */
     public function unprocess($errors);
 
     /**
      * Render response with format.
      *
-     * @param  string $format
+     * @param  string         $format
+     * @param  null|callable  $callback
      * @return mixed
      */
     public function render($format = null, $callback = null);
